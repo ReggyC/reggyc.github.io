@@ -1,0 +1,471 @@
+/* 
+COLOURS
+--------
+Wescott Logo Colours
+dk-orange: #f1592a
+md-orange: #f36d21
+lt-orange: #f4803c
+--------
+steel blue: #2D7DD2
+dk-orange: #f1592a
+faded-orange: #ffc15e
+poppy: #DB2B39
+*/
+/* Global Settings */
+body {
+	background-color: white;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	text-align: center;
+	background-image: url("../img/atc-bg.jpg");
+	/* Create the parallax scrolling effect */
+	min-height: 100vw;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+
+/* Page Container Settings */
+.container {
+	margin:0 auto;
+	max-width:960px;
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+/* Global Text Settings */
+h1{
+	font-size: 34px;
+}
+h2{
+	font-size: 28px;
+}
+h3{
+	font-size: 24px;
+	color:#f1592a;
+	text-shadow: 3px 1px 2px rgba(0,0,0,0.79);
+}
+p{
+	font-size: 18px;
+}
+
+/* Navbar */
+nav{
+	height: 50px;
+	background-color: #2D7DD2;
+	color:white;
+}
+.nav-container{
+	margin:0 auto;
+	max-width:960px;
+	font-size: 100%;
+	line-height: 1.5;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	height:100%;
+}
+/* Brand/Logo */
+.branding{
+	display: flex;
+	flex-wrap: nowrap;
+	height: 100%;
+}
+.brand-logo{
+	max-width: 45px;
+	height: auto;
+	margin: auto 10px;
+}
+.brand-logo:hover{
+	cursor:pointer;
+	filter:grayscale(100%);
+}
+.branding p:hover{
+	color: black;
+}
+.branding p, .branding a{
+	margin: auto 0;
+}
+.branding p:hover{
+	cursor:pointer;
+}
+/* Nav Buttons */
+.nav-buttons{
+	display: flex;
+	flex-wrap: nowrap;
+	height: 100%;
+}
+nav ul li{
+	height: 100%;
+	text-align:center;
+	display: table;
+	padding: 0 15px;
+}
+nav ul li a, nav ul li a i{
+	display: table-cell;
+	vertical-align: middle;
+}
+nav ul li:hover{
+	background-color: black;
+	cursor: pointer;
+}
+/* Dropdown  */
+.dropdown-hover{
+	display:flex;
+	flex-wrap:nowrap;
+	cursor:pointer;
+}
+.dropdown-content{
+	display:flex;
+	flex-wrap:nowrap;
+	min-width: 0px;
+	z-index:1;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+.dropdown-content li{
+	border-radius:3px;
+}
+.dropdown{
+	display:none;
+}
+
+/* Banner */
+.banner{
+	position:relative;
+	border-bottom:1px solid rgba(255, 255, 255, 0.50);
+	border-right:1px solid rgba(255, 255, 255, 0.50);
+	border-left:1px solid rgba(255, 255, 255, 0.50);
+	border-radius: 0px 0px 3px 3px;
+}
+#banner-bg{
+	width: 100%;
+	height:60vh;
+	overflow:hidden;
+	object-fit:cover;
+}
+#banner-logo{
+	position:absolute;
+	width:250px;
+	top:2%;
+	left: 0; 
+  	right: 0; 
+  	margin-inline: auto; 
+}
+.banner p{
+	position:absolute;
+	top:50%;
+	left: 0; 
+  	right: 0; 
+  	margin-inline: auto; 
+	color:white;
+	text-shadow:1px 2px 2px black;
+	font-size:24px;
+}
+.banner-button{
+	position:absolute;
+	top:80%;
+	left:0;
+	right:0;
+	margin-inline:auto;
+	padding:5px 15px;
+	background-color:#f1592a;
+	width:150px;
+	border-radius:5px;
+	border:1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Main Content */
+#projects-home{
+	background-color:rgba(255, 255, 255, 0.499);
+	border-radius:5px;
+	padding-top:5px;
+	margin-top: 20px;
+}
+.main-content{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	margin-top: 15px;
+}
+main hr{
+	width:75%;
+}
+
+/* Project Dropdowns */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible-container{
+	width:100%;
+}
+.collapsible {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 10px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.collapsible:after {
+	content: '\1F783'; /* Unicode character for "plus" sign (+) */
+	color: black;
+	float: right;
+	margin-left: 5px;
+}
+  
+
+.active:after {
+	content: "\1F781"; /* Unicode character for "minus" sign (-) */
+	color: black;
+	float: right;
+	margin-left: 5px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+	background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+	padding: 10px 10px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	text-align:left;
+}
+.projects-banner{
+	position:relative;
+	border-bottom:1px solid rgba(255, 255, 255, 0.50);
+	border-right:1px solid rgba(255, 255, 255, 0.50);
+	border-left:1px solid rgba(255, 255, 255, 0.50);
+	border-radius: 0px 0px 5px 5px;
+}
+.projects-banner img{
+	width: 100%;
+	height:300px;
+	overflow:hidden;
+	object-fit:cover;
+	border-radius: 0px 0px 5px 5px;
+}
+.projects-banner h1{
+	position:absolute;
+	left:0;
+	right:0;
+	margin-inline:auto;
+	top:20%;
+	color:#f1592a;
+	text-shadow:1px 2px 2px black;
+}
+.projects-banner p{
+	position:absolute;
+	left:0;
+	right:0;
+	margin-inline:auto;
+	top:50%;
+	color:white;
+	text-shadow:1px 2px 2px black;
+}
+.projects-container{
+	margin:20px auto;
+}
+
+/* About Section */
+.about-home{
+	background-color:rgba(255, 255, 255, 0.5);
+	margin: 20px 0;
+	border-radius:5px;
+	padding:5px 10px;
+}
+.about-home p{
+	margin-bottom:15px;
+}
+.about-button{
+	font-weight:bold;
+	color: white;
+	text-shadow: 3px 1px 2px rgba(0,0,0,0.79);
+}
+.about-button:hover{
+	color:rgb(207, 77, 37);
+}
+
+.about{
+	background-color:rgba(255, 255, 255, 0.5);
+	margin: 0 0 20px 0;
+	border-radius:5px;
+	padding:5px 10px;
+}
+.about p{
+	margin: 15px auto;
+}
+
+.team{
+	background-color:rgba(255, 255, 255, 0.5);
+	margin-bottom:20px;
+	border-radius:5px;
+}
+.team-banner{
+	position:relative;
+	border:1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+#team-bg{
+	width: 100%;
+	height:150px;
+	overflow:hidden;
+	object-fit:cover;
+}
+#team-header{
+	position:absolute;
+	top:40%;
+	left: 0; 
+  	right: 0; 
+  	margin-inline: auto; 
+}
+.team-container{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+.team-member{
+	background-color:rgba(255, 255, 255, 0.5);
+	margin:10px auto;
+	border-radius:5px;
+	border:1px solid rgba(255, 255, 255, 0.504);
+}
+.team-member-img{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	width:250px;
+}
+.team-member h4{
+	margin: 5px auto;
+}
+
+/* Contact Us */
+#contact-overview{
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:0 0 5px 5px;
+	padding:15px;
+	margin-bottom:20px;
+}
+.contact-form{
+	margin-bottom:20px;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:5px;
+	padding-top:15px;
+}
+/* Careers */
+#careers-overview{
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:0 0 5px 5px;
+	padding:15px;
+	margin-bottom:20px;
+}
+
+/* Footer */
+footer{
+	background-color:#2D7DD2;
+	color:white;
+	padding:25px;
+}
+.footer-container{
+	margin:0 auto;
+	max-width:960px;
+	font-size: 100%;
+	line-height: 1.5;
+}
+#footer-logo{
+	margin:auto;
+	max-width:150px
+}
+#footer-logo:hover{
+	filter:grayscale(100%);
+}
+#footer-tagline{
+	font-size:14px;
+	margin:5px auto 5px auto;
+}
+footer hr{
+	width:50%;
+}
+footer li:hover{
+	color:black;
+}
+/* Media Queries - Responsive */
+@media(max-width: 600px){
+	/* Global */
+
+	/* Navbar */
+	
+	/* Pages */
+}
+
+@media(min-width: 600px){
+	/* Global */
+
+	/* Navbar */
+	
+	/* Pages */
+	.tile{
+		width: 45%;
+	}
+}
+
+@media(max-width: 920px){
+	/* Global */
+	/* Dropdown  */
+	.dropdown{
+		display:block;
+	}
+	.dropdown:first-child{
+		height:100%;
+		vertical-align:middle;
+	}
+	.dropdown a i{
+		padding-top:15px;
+	}
+
+	.dropdown-hover{
+		position:relative;
+		display:inline-block;
+		cursor:pointer;
+	}
+	.dropdown-content{
+		display:none;
+		position: absolute;
+		background-color:#2D7DD2;
+		min-width: 150px;
+		z-index:1;
+		right:0px;
+	}
+	.dropdown-hover:hover .dropdown-content{
+		display:block;
+	}
+	.dropdown-content li{
+		padding:10px;
+		width:100%;
+	}
+	/* Pages */
+
+}
+@media(min-width: 920px){
+	/* Global */
+
+	/* Pages */
+	.tile{
+		width: 30%;
+	}
+}
+
+@media(min-width: 1200px){
+	/* Global */
+
+	/* Pages */
+}
