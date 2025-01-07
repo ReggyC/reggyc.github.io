@@ -8,7 +8,20 @@ let projects = [
         "contractor":"Placeholder",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2024",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
     {
         "name":"Paramount",
@@ -16,56 +29,176 @@ let projects = [
         "contractor":"Example",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2023",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
     {
-        "name":"Aldegrove Town Center",
+        "name":"Example Job #3",
         "developer":"Placeholder",
         "contractor":"Placeholder",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2023",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
     {
-        "name":"Aldegrove Town Center",
+        "name":"Example Job #4",
         "developer":"Placeholder",
         "contractor":"Placeholder",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2023",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
     {
-        "name":"Aldegrove Town Center",
+        "name":"Example Job #5",
         "developer":"Placeholder",
         "contractor":"Placeholder",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2023",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
     {
-        "name":"Aldegrove Town Center",
+        "name":"Example Job #6",
         "developer":"Placeholder",
         "contractor":"Placeholder",
         "scope":"Floating elevator cores, stair cores...",
         "completed":"2023",
-        "imgnames": ["atc-01","atc-02","atc-03"],
+        "imgnames": [
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+          {
+            "name":"atc-01",
+            "alt":"Standing Elevator Cores",
+          },
+        ],
     },
 ];
 
+/* 
+<div class="collapsible-container">
+    <button type="button" class="collapsible"><b>Example Project</b></button>
+    <div class="content">
+        <p><b>Developer: </b><a href="#">Example</a></p>
+        <p><b>Contractor: </b><a href="#">Example</a></p>
+        <p><b>Scope: </b><a href="#">Example</a></p>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="img-number">1/3</div>
+                <img src="./img/site.jpg" alt="">
+            </div>
+            <div class="slide">
+                <div class="img-number">2/3</div>
+                <img src="./img/atc-banner-2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <div class="img-number">3/3</div>
+                <img src="./img/columns.jpg" alt="">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>    
+    </div>
+</div>
+*/
+
 function populateProjects() {
     projects.forEach(project => {
-            let tile = document.createElement("div");
-            tile.className="tile";
-            tile.innerHTML = `
-                    <a href="#"><p>`+ project.name +`</p></a>
-                    <img src="./img/site.jpg" alt="" />
-                    <div class="tile-overlay">
-                        <p id="tile-developer"><b>Developer: </b>`+ project.developer +`</p>
-                        <p id="tile-contractor"><b>Contracter: </b>`+ project.contractor +`</p>
-                        <p id="tile-scope"><b>Scope: </b>`+ project.scope +`</p>
+            let proj = document.createElement("div");
+            proj.className="collapsible-container";
+            proj.innerHTML = `
+                    <button type="button" class="collapsible"><b>`+project.name+`</b></button>
+                    <div class="content">
+                      <p><b>Developer: </b><a href="#">`+project.developer+`</a></p>
+                      <p><b>Contractor: </b><a href="#">`+project.contractor+`</a></p>
+                      <p><b>Scope: </b><a href="#">`+project.scope+`</a></p>
                     </div>
             `;
-            document.getElementById("tiles").appendChild(tile);
+            let imgs = document.createElement("div");
+            imgs.className="slide-container";
+            let dotsDiv = document.createElement("div");
+            dotsDiv.className = "dots";
+            if(project.imgnames.length > 0){
+              for(let i = 1; i <= project.imgnames.length; i++){
+                let imgSlide = document.createElement("div");
+                imgSlide.className = "slide";
+                imgSlide.innerHTML = `
+                  <div class="slide">
+                    <div class="img-number">`+i+` / `+project.imgnames.length+`</div>
+                    <img src="./img/`+project.imgnames[i].name+`.jpg" alt="`+project.imgnames[i].alt+`">
+                  </div>
+                `;
+                imgs.appendChild(imgSlide);
+                dotsDiv.innerHTML += `<span class="dot" onclick="currentSlide(`+i+`)"></span>`
+              }
+              proj.appendChild(imgs);
+              proj.innerHTML += `
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              `;
+              proj.appendChild(dotsDiv);
+            }
+            document.getElementById("projects-container").appendChild(proj);
     });
 }
 

@@ -541,6 +541,9 @@ footer li:hover{
 	.banner p{
 		top:55%;
 	}
+	.projects-banner img{
+		height:200px;
+	}
 	/* Navbar */
 	
 	/* Pages */
