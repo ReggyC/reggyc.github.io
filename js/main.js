@@ -88,6 +88,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+// Image Slides
 let slideIndex = 1;
 showSlides(slideIndex);
 

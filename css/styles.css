@@ -14,7 +14,7 @@ poppy: #DB2B39
 /* Global Settings */
 body {
 	background-color: white;
-	font-family: Tahoma, sans-serif;
+	font-family: helvetica, arial, sans-serif;
 	font-size: 16px;
 	text-align: center;
 	background-image: url("../img/atc-bg.jpg");
@@ -104,7 +104,10 @@ nav{
 	filter:grayscale(100%);
 }
 .branding p:hover{
-	color: black;
+	color: rgb(176, 176, 176);
+}
+.branding p:active{
+	color:black;
 }
 .branding p, .branding a{
 	margin: auto 0;
@@ -245,7 +248,7 @@ main hr{
 }
 
 .collapsible:after {
-	content: '\1F783'; /* Unicode character for "plus" sign (+) */
+	content: '\1F783';
 	color: black;
 	float: right;
 	margin-left: 5px;
@@ -253,7 +256,7 @@ main hr{
   
 
 .active:after {
-	content: "\1F781"; /* Unicode character for "minus" sign (-) */
+	content: "\1F781";
 	color: black;
 	float: right;
 	margin-left: 5px;
@@ -307,7 +310,7 @@ main hr{
 	text-shadow:1px 2px 2px black;
 }
 .projects-container{
-	margin:20px auto;
+	margin-bottom:20px;
 }
 
 /* Slideshow container */
@@ -420,7 +423,8 @@ main hr{
 	text-shadow: 3px 1px 2px rgba(0,0,0,0.79);
 }
 .about-button:hover{
-	color:rgb(207, 77, 37);
+	color:black;
+	text-shadow: 3px 1px 2px rgba(255, 255, 255, 0.79);
 }
 
 .about{
@@ -531,9 +535,11 @@ footer li:hover{
 /* Media Queries - Responsive */
 @media screen and (max-width: 600px){
 	/* Global */
-	p{font-size:1.4rem;}
 	.banner{
 		border:none;
+	}
+	.banner p{
+		top:55%;
 	}
 	/* Navbar */
 	
