@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Wescott - Home</title>
     <script src="https://kit.fontawesome.com/f9f0b7256e.js" crossorigin="anonymous"></script>
     <script src="./js/main.js" defer></script>
@@ -20,9 +21,9 @@
                     <a href="./index.html"><p>Wescott</p></a>
                 </div>
                 <!-- Navigation Buttons -->
-                <ul class="nav-buttons dropdown-hover">
+                <ul class="nav-buttons dropdown-hover" onclick="dropdown()">
                     <li class="dropdown"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
-                    <div class="dropdown-content">
+                    <div id="dropdown-content" class="dropdown-content">
                         <li><a href="./index.html" style="text-decoration:underline;text-underline-position:under;">Home</a></li>
                         <li><a href="./projects.html">Projects</a></li>
                         <li><a href="./about.html">About</a></li>

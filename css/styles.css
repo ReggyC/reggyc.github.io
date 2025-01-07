@@ -19,13 +19,15 @@ body {
 	text-align: center;
 	background-image: url("../img/atc-bg.jpg");
 	/* Create the parallax scrolling effect */
-	min-height: 100vw;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 
+section{
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+}
 
 /* Page Container Settings */
 .container {
@@ -36,26 +38,45 @@ body {
 }
 
 /* Global Text Settings */
-h1{
-	font-size: 34px;
-}
-h2{
-	font-size: 28px;
-}
-h3{
-	font-size: 24px;
-	color:#f1592a;
+h1,h2,h3,h4{
+	color:white;
 	text-shadow: 3px 1px 2px rgba(0,0,0,0.79);
 }
-p{
-	font-size: 18px;
+h1{
+	font-size: 2.5rem;
 }
+h2{
+	font-size: 2rem;
+}
+h3{
+	font-size: 1.5rem;
+}
+h4{
+	font-size:1.25rem;
+}
+
+/* Link States */
+/* a:link{
+	
+}
+a:visited{
+
+}
+a:hover{
+
+}
+a:active{
+
+} */
 
 /* Navbar */
 nav{
 	height: 50px;
 	background-color: #2D7DD2;
 	color:white;
+	position:relative;
+	z-index:1;
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
 }
 .nav-container{
 	margin:0 auto;
@@ -111,6 +132,10 @@ nav ul li:hover{
 	background-color: black;
 	cursor: pointer;
 }
+nav ul li:active{
+	background-color:white;
+	color:black;
+}
 /* Dropdown  */
 .dropdown-hover{
 	display:flex;
@@ -161,7 +186,7 @@ nav ul li:hover{
   	right: 0; 
   	margin-inline: auto; 
 	color:white;
-	text-shadow:1px 2px 2px black;
+	text-shadow:1px 1px 2px black;
 	font-size:24px;
 }
 .banner-button{
@@ -171,10 +196,18 @@ nav ul li:hover{
 	right:0;
 	margin-inline:auto;
 	padding:5px 15px;
-	background-color:#f1592a;
+	color:white;
+	background-color:#2D7DD2;
 	width:150px;
 	border-radius:5px;
 	border:1px solid rgba(255, 255, 255, 0.5);
+	text-shadow:1px 1px 2px black;
+}
+.banner-button:hover{
+	background-color:#57a0ee;
+}
+.banner-button:active{
+	background-color: #1865b6;
 }
 
 /* Main Content */
@@ -238,6 +271,7 @@ main hr{
 	overflow: hidden;
 	background-color: #f1f1f1;
 	text-align:left;
+	border:1px solid rgba(0, 0, 0, 0.496);
 }
 .projects-banner{
 	position:relative;
@@ -245,6 +279,7 @@ main hr{
 	border-right:1px solid rgba(255, 255, 255, 0.50);
 	border-left:1px solid rgba(255, 255, 255, 0.50);
 	border-radius: 0px 0px 5px 5px;
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
 }
 .projects-banner img{
 	width: 100%;
@@ -259,7 +294,7 @@ main hr{
 	right:0;
 	margin-inline:auto;
 	top:20%;
-	color:#f1592a;
+	color:white;
 	text-shadow:1px 2px 2px black;
 }
 .projects-banner p{
@@ -274,6 +309,100 @@ main hr{
 .projects-container{
 	margin:20px auto;
 }
+
+/* Slideshow container */
+.slide-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .slide {
+	display: none;
+  }
+  .slide img{
+	position:relative;
+
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	background-color:rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .img-number {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dots{
+	display:flex;
+	flex-wrap: nowrap;
+	justify-content:center;
+	position:absolute;
+	bottom:0;
+	background-color:rgba(0, 0, 0, 0.5);
+	width:auto;
+	padding:5px 10px;
+	left:0;
+	right:0;
+	margin-inline:auto;
+  }
+  .dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 5px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+  }
+  
+  .active {
+	background-color: rgb(172, 172, 172);
+	border:1px solid white;
+  }
 
 /* About Section */
 .about-home{
@@ -394,31 +523,33 @@ footer{
 }
 footer hr{
 	width:50%;
+	color:white;
 }
 footer li:hover{
 	color:black;
 }
 /* Media Queries - Responsive */
-@media(max-width: 600px){
+@media screen and (max-width: 600px){
 	/* Global */
-
-	/* Navbar */
-	
-	/* Pages */
-}
-
-@media(min-width: 600px){
-	/* Global */
-
-	/* Navbar */
-	
-	/* Pages */
-	.tile{
-		width: 45%;
+	p{font-size:1.4rem;}
+	.banner{
+		border:none;
 	}
+	/* Navbar */
+	
+	/* Pages */
 }
 
-@media(max-width: 920px){
+@media screen and (min-width: 600px){
+	/* Global */
+
+	/* Navbar */
+	
+	/* Pages */
+	
+}
+
+@media screen and (max-width: 920px){
 	/* Global */
 	/* Dropdown  */
 	.dropdown{
@@ -452,19 +583,18 @@ footer li:hover{
 		padding:10px;
 		width:100%;
 	}
+	.show{display:block;}
 	/* Pages */
 
 }
-@media(min-width: 920px){
+@media screen and (min-width: 920px){
 	/* Global */
 
 	/* Pages */
-	.tile{
-		width: 30%;
-	}
+	
 }
 
-@media(min-width: 1200px){
+@media screen and (min-width: 1200px){
 	/* Global */
 
 	/* Pages */
